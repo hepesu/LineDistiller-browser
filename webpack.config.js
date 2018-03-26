@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 
-module.exports = {
+const config = {
 	entry: path.join(__dirname, 'src/index.js'),
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -34,6 +34,11 @@ module.exports = {
 		minimize: true,
 		concatenateModules: true,
 		usedExports: false
-	},
-	mode: 'production'
+	}
 };
+
+if (process.env.NODE_ENV === 'production') {
+	config.plugins = [new webpack.DefinePlugin({ 'process.env.NODE_ENV': JSON.stringify('production') })];
+}
+
+module.exports = config;
