@@ -27,10 +27,9 @@ import { rgb2gray, rgb2grayCIE, normalize, over, clamp } from "./utils";
 import masks from "./masks";
 import { equalizeHist, equalizeHistAdaptive } from "./histogram";
 
-const MODEL_PATH =
-  process.env.NODE_ENV === "production"
-    ? "https://hepesu.github.io/LineDistiller-browser/assets/model_180102_128.bin"
-    : "/assets/model_180102_128.bin";
+const MODEL_PATH = process.env.NODE_ENV === "production"
+     ? "https://hepesu.github.io/LineDistiller-browser/assets/model_180102_128.bin"
+     : "/assets/model_180102_128.bin";
 
 const inputProcess = cwise({
   args: ["array"],
