@@ -11,6 +11,7 @@
   "author": "Hepesu",
   "license": "MIT",
   "dependencies": {
+    "@tensorflow/tfjs": "^0.7.0",
     "bluebird": "^3.5.1",
     "image-rotate": "^1.0.0",
     "keras-js": "^1.0.3",
