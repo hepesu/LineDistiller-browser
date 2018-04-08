@@ -38,9 +38,6 @@ import {
     equalizeHist,
     equalizeHistAdaptive
 } from "./histogram";
-import {
-    setTimeout
-} from "timers";
 
 const MODEL_PATH =
     process.env.NODE_ENV === "production" ?
@@ -50,7 +47,8 @@ const MODEL_PATH =
 const inputProcess = cwise({
     args: ["array"],
     body: function (a) {
-        a = a / 255;
+        //a = ((a/255)*220)/255;
+        a = a * 0.003383;
     }
 });
 
